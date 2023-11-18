@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <header class="header"> 
+        <div class="menu container">
+            <a href="#" class="logo"><img src="Imagenes/dfekc0x-36f1a938-d948-45f3-9498-3a76fd24e322.gif" width="100px" height="100px " alt="Logo"></a>
+           <input type="checkbox" id="menu"  />
+           <label for="menu">
+            <img src="Imagenes/miles moralers icon.jpg" class="menu-icono" alt="menu" width="0px" height="0px">
+           </label>
+           <div id="inicio"></div>
+        
+           <nav class="navbar">
+                <ul>
+                    <li><a href="#">inicio</a></li> 
+                    <li><a href="#">servicios</a></li>
+                    <li><a href="#">Productos</a></li> 
+                    <li><a href="#">contacto</a></li>
+                </ul>
+           </nav>
+        </div>
+        
+        <!-- Agregar la imagen a la derecha en la parte superior -->
+        <style>
+            /* Estilos iniciales para la imagen */
+            .movable-image {
+                position: absolute;
+                bottom: 15px;
+                right: 10px;
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <!-- Imagen con la clase "movable-image" para permitir el movimiento -->
+        <img src="Imagenes/FhdOPsyXoAEppsV.jpeg" alt="Imagen a la derecha" class="movable-image">
+    
+        <!-- Script para habilitar el movimiento de la imagen -->
+        <script>
+            var isDragging = false;
+            var offsetX, offsetY;
+    
+            // Obtener la referencia de la imagen
+            var image = document.querySelector('.movable-image');
+    
+            // Agregar eventos para iniciar y detener el arrastre
+            image.addEventListener('mousedown', startDragging);
+            document.addEventListener('mouseup', stopDragging);
+    
+            function startDragging(e) {
+                isDragging = true;
+                offsetX = e.clientX - image.getBoundingClientRect().left;
+                offsetY = e.clientY - image.getBoundingClientRect().top;
+    
+                // Agregar evento para mover la imagen durante el arrastre
+                document.addEventListener('mousemove', dragImage);
+            }
+    
+            function stopDragging() {
+                isDragging = false;
+    
+                // Eliminar el evento para mover la imagen al detener el arrastre
+                document.removeEventListener('mousemove', dragImage);
+            }
+    
+            function dragImage(e) {
+                if (isDragging) {
+                    // Actualizar la posición de la imagen durante el arrastre
+                    image.style.left = e.clientX - offsetX + 'px';
+                    image.style.top = e.clientY - offsetY + 'px';
+                }
+            }
+        </script>
+        
+        </style>
+        
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>Conoce un poco de <span>Jonathan</span> <br> y compra su arte aqui</h1>
+                <p>
+                    Hola mi nombre es jonathan, tengo 27 años.
+                     soy dibujante profecional desde hace 8 años 
+                    Me dedico al dibujo de diferentes comics.
+                     como tambiena la creacion propia de arte, 
+                    actualmente trabajo para la empresa Eclipse Comics como dibujante y editor
+                    cuanto con una amplia experiencia en diferentes areas de los dibujos de comics y propios
+                    asi como en el diseño 3D y creacion de mapas y personajes para el juego VRCHAT
+                </p>
+                <div class="butons">
+                    <a href="#" class="btn-1">información</a>
+                    <a href="#" class="btn-1">Imágenes</a>
+                </div>
+            </div>
+        </div>
+    </header>
+        
+    </header>
+    
+    <section class="popular container">
+
+        <h2> Imagenes destacadas</h2>
+
+        
+    <!-- Agrega los enlaces de jQuery y Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- Agrega tu estilo personalizado para el carrusel si lo deseas -->
+    <style>
+        /* Estilo personalizado del carrusel */
+        .slick-slider {
+            width: 30%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor del carrusel -->
+    <div id="servicios"></div>
+    <div class="slick-slider">
+        <div><img src="Imagenes/Fe45EcBWQBw_R1g.jpeg" alt="Imagen 1"></div>
+        <div><img src="Imagenes/F32vZirWUAEjF83.jpeg" alt="Imagen 2"></div>
+        <div><img src="Imagenes/FeEj4JhXkAAtoUK.jpeg" alt="Imagen 3"></div>
+        <div><img src="Imagenes/FeqO4VaWYAMnjc4.jpeg" alt="Imagen 3"></div>
+        <div><img src="Imagenes/Fkm9MOjWIAwuW6I.jpeg" alt="Imagen 3"></div>
+        <div><img src="Imagenes/FYTgL9WX0AMZbuN.jpeg" alt="Imagen 3"></div>
+        <div><img src="Imagenes/F5g5CL8XAAA39DH.jpeg" alt="Imagen 3"></div>
+
+        <!-- Agrega más elementos div con imágenes según sea necesario -->
+    </div>
+
+    <!-- Inicialización del carrusel -->
+    <script>
+        $(document).ready(function(){
+            $('.slick-slider').slick();
+        });
+    </script>
+
+    </section>
+
+    <main class="product container">
+        <h2>Todas los dibujos</h2>
+        <div id="Productos"></div>
+        <div class="product-content">
+            <div class="product-1">
+                <img src="Imagenes/FGRqTxXXsAMcRUS.jpeg" alt="" width="400px" height="400px">
+                <div class="product-txt">
+                    <h3>Jinx chibi</h3>
+                    <div class="price">
+                        <p>$45</p>
+                        <a href="#" class="btn-2">comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="Imagenes/F5isrAvXoAAy9e6.jpeg" alt="" width="400px" height="400px">
+                <div class="product-txt">
+                    <h3>Mapache Sad</h3>
+                    <div class="price">
+                        <p>$35</p>
+                        <a href="#" class="btn-2">comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="Imagenes/FGmzeNqXsAsiZ4b.jpeg" alt="" width="400px" height="400px">
+                <div class="product-txt">
+                    <h3>aclara tu mente</h3>
+                    <div class="price">
+                        <p>$95</p>
+                        <a href="#" class="btn-2">comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="Imagenes/FTZLtijWQAI4ULC.jpeg" alt="" width="400px" height="400px">
+                <div class="product-txt">
+                    <h3>Como un algodon</h3>
+                    <div class="price">
+                        <p>$115</p>
+                        <a href="#" class="btn-2">comprar</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="Imagenes/0738a21b-7b0b-4081-b200-6e23d180e869.jpeg"alt="" width="400px" height="400px">
+                <div class="product-txt">
+                    <h3>Sarichin</h3>
+                    <div class="price">
+                        <p>$75</p>
+                        <a href="#" class="btn-2">comprar</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="Imagenes/F7SXc3TWcAAaBjb.jpeg" alt="" width="400px" height="400px">
+                <div class="product-txt">
+                    <h3>Dualidad</h3>
+                    <div class="price">
+                        <p>$215</p>
+                        <a href="#" class="btn-2">comprar</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="Imagenes/F6Eu19xWIAAvvEa.jpeg" alt="" width="400px" height="400px">
+                <div class="product-txt">
+                    <h3>los amantes</h3>
+                    <div class="price">
+                        <p>$65</p>
+                        <a href="#" class="btn-2">comprar</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="Imagenes/F4pswhUX0AAC08T.jpeg" alt="" width="400px" height="400px">
+                <div class="product-txt">
+                    <h3>No master</h3>
+                    <div class="price">
+                        <p>$89</p>
+                        <a href="#" class="btn-2">comprar</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="Imagenes/FZnvJJ0WAAAI-sP.jpeg" alt="" width="400px" height="400px">
+                <div class="product-txt">
+                    <h3>Hyenas</h3>
+                    <div class="price">
+                        <p>$99</p>
+                        <a href="#" class="btn-2">comprar</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </main>
+    
+    <style>
+        /* Estilo para separar las imágenes con margen derecho */
+        .product-1 {
+            margin-right: 20px; /* Ajusta el espacio entre las imágenes según tus necesidades */
+            display: inline-block; /* Permite que los elementos fluyan horizontalmente */
+        }
+    </style>
+
+        
+
+
+        </div>
+    </main>
+
+    <section class="contact container">
+
+        <div class="contact-content">
+            <h3>Subscribite a nuestro blog</h3>
+            <form>
+                <input type="email" placeholder="Escribe tu correo">
+                <input type="submit" class="btn-3" value="Enviar">
+            </form>
+            <div id="contacto"></div>
+
+
+        </div>
+
+    </section>
+
+    <footer class="footer container">
+
+        <div class="link">
+            <a href="#" class="logo"><img src="Imagenes/dfekc0x-36f1a938-d948-45f3-9498-3a76fd24e322.gif" width="100px" height="100px " alt="Logo"></a>
+        </div>
+
+        <div class="link">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+
+    </footer>
+    <audio controls>
+        <source src="Imagenes/billie-eilish-when-the-partys-over.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+
+   
+
+
+
+  
+</body>
+</html>
